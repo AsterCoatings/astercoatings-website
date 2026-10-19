@@ -1,0 +1,54 @@
+{
+  "name": "aster-industrial-coatings-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Aster Industrial Coatings — B2B website",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:prod": "tsx scripts/check-config.ts --strict && tsx scripts/check-content.ts && next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "check:config": "tsx scripts/check-config.ts",
+    "check:content": "tsx scripts/check-content.ts",
+    "leads:export": "tsx scripts/leads-export.ts",
+    "leads:retry": "tsx scripts/leads-retry.ts"
+  },
+  "dependencies": {
+    "next": "16.4.2",
+    "nodemailer": "^7.0.13",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.58.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^24.10.0",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@vitest/coverage-v8": "^5.0.5",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "16.4.2",
+    "jsdom": "^30.1.3",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  }
+}

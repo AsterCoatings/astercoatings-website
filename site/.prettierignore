@@ -1,0 +1,6 @@
+.next
+node_modules
+playwright-report
+test-results
+data
+components/brand/logo-paths.ts

@@ -1,0 +1,4 @@
+# Root ignores; site/.gitignore covers the app itself.
+.DS_Store
+Thumbs.db
+*.tmp

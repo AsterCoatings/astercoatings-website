@@ -1,0 +1,66 @@
+/* Design tokens — the only place colours, type scale, spacing and motion are defined.
+   See docs/design-notes.md for the rationale and contrast checks. */
+@theme {
+  /* Colour */
+  --color-ink: #14181f;
+  --color-ink-soft: #3c4452;
+  --color-ink-muted: #5c6577;
+  --color-accent: #c84a18; /* white on accent 4.7:1 */
+  --color-accent-deep: #b5431a; /* accent text on white 5.6:1 */
+  --color-accent-bright: #ee7f52; /* accent text on ink 6.6:1 */
+  --color-accent-tint: #fbe9e1;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f3f4f6;
+  --color-steel: #e6ecf2;
+  --color-steel-deep: #c9d3de;
+  --color-line: #d5dae1;
+  --color-line-strong: #aab3bf;
+  --color-success: #1e7f4f;
+  --color-warning: #b26a00;
+  --color-warning-tint: #fff1d6;
+  --color-error: #b42318;
+  --color-error-tint: #fdecea;
+  --color-draft: #7a3e9d;
+  --color-draft-tint: #f1e8f7;
+
+  /* Type */
+  --font-sans: var(--font-text), 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-display), 'Eurostile', 'Bank Gothic', Arial, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --text-xs: 0.875rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-md: 1.125rem;
+  --text-md--line-height: 1.6;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.3rem;
+  --text-xl--line-height: 1.25;
+  --text-2xl: 1.55rem;
+  --text-2xl--line-height: 1.2;
+  --text-3xl: 1.85rem;
+  --text-3xl--line-height: 1.18;
+  --text-4xl: 2.3rem;
+  --text-4xl--line-height: 1.14;
+  --text-5xl: 2.8rem;
+  --text-5xl--line-height: 1.1;
+
+  /* Shape */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* Elevation (minimal; borders do the work) */
+  --shadow-card: 0 1px 2px rgb(20 24 31 / 0.06), 0 1px 1px rgb(20 24 31 / 0.04);
+
+  /* Motion */
+  --ease-out-quick: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-quick: 160ms;
+
+  /* Layout */
+  --container-prose: 70ch;
+  --container-site: 80rem;
+}
