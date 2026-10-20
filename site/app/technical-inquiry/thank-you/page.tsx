@@ -15,7 +15,7 @@ export default function ThankYouPage() {
     <>
       <PageHeader
         title="We have your question."
-        lead="A confirmation email is on its way with a reference number. We reply by email, so keep an eye on your inbox."
+        lead="It has reached our sales team. We reply by email, so keep an eye on your inbox."
       />
       <Section>
         <div className="prose-block text-md">

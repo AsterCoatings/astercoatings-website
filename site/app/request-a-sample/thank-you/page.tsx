@@ -15,7 +15,7 @@ export default function ThankYouPage() {
     <>
       <PageHeader
         title="We have your sample request."
-        lead="A confirmation email is on its way with a reference number. We will confirm the product and ask for a ship-to address by email."
+        lead="It has reached our sales team. We will confirm the product and ask for a ship-to address by email."
       />
       <Section>
         <div className="prose-block text-md">
