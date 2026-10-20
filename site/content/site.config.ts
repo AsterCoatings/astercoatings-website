@@ -46,10 +46,11 @@ export const site: SiteConfig = {
     name: 'Aster Industrial Coatings',
     shortName: 'Aster',
     legalSuffix: null,
-    tagline: null,
-    description: null,
+    tagline: 'Industrial alkyd coatings for steel fabrication', // from approved home copy, 2026-10-20
+    description:
+      'Aster Industrial Coatings makes water-reducible and short oil alkyd primers and topcoats for steel fabrication, built on its own alkyd resin and manufactured in California, Kentucky, Michigan and Texas. Custom formulation, colour matching and toll manufacturing.',
   },
-  legal: { entityName: null, jurisdiction: null },
+  legal: { entityName: 'Aster Industrial Coatings', jurisdiction: null }, // A3 — owner, 2026-10-20
   contact: {
     salesPhone: '888-655-6557', // A6 — owner, 2026-10-19: dedicated Aster toll-free number
     salesEmail: 'sales@astercoatings.net', // A6 — owner, 2026-10-19 (given as "Sales@astercoaings.net"; spelling corrected to the registered domain)
@@ -85,7 +86,7 @@ export const requirements: Record<string, { level: Requirement; question: string
   'contact.salesPhone': { level: 'block', question: 'A6' },
   'contact.salesEmail': { level: 'block', question: 'A6' },
   'contact.technicalEmail': { level: 'pub', question: 'A6' },
-  'contact.address': { level: 'block', question: 'A5' },
+  'contact.address': { level: 'later', question: 'A5' }, // owner decided: no street address on the site (2026-10-19)
   'contact.hours': { level: 'later', question: 'A9' },
   'urls.canonicalHost': { level: 'block', question: 'F1' },
   'social.linkedin': { level: 'later', question: 'A10' },

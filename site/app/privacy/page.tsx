@@ -26,16 +26,16 @@ export default function PrivacyPage() {
         ) : null}
         <div className="prose-block text-md">
           <p>
-            This policy explains what information this website collects, why, and what we do with it. It
-            applies to the website only.
+            This website is operated by {site.legal.entityName ?? site.brand.name}. This policy explains what
+            information the website collects, why, and what we do with it. It applies to the website only.
           </p>
           <h2>Information you send us</h2>
           <p>
             When you request a quote, ask a technical question or use the contact form, we collect the details
             you enter: your name, company, email address, phone number if you give it, and what you tell us
             about your project. We use this information to answer your inquiry and, if you become a customer,
-            to manage the relationship. Inquiries are stored in our customer records system and retained for
-            as long as there is a business reason to keep them.
+            to manage the relationship. Inquiries are delivered to our sales team by email through a
+            form-processing service and retained for as long as there is a business reason to keep them.
           </p>
           <h2>Information collected automatically</h2>
           <p>
@@ -51,8 +51,8 @@ export default function PrivacyPage() {
           <h2>Sharing</h2>
           <p>
             We do not sell personal information. We share it only with service providers that help us run the
-            site and respond to inquiries (for example, hosting, email delivery and our customer records
-            system), under contracts that restrict their use of it.
+            site and respond to inquiries (for example, website hosting, form processing and email delivery),
+            under terms that restrict their use of it.
           </p>
           <h2>Your choices</h2>
           <p>
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
           </p>
           <h2>Changes</h2>
           <p>We will post any changes to this policy on this page with a new revision date.</p>
-          <p className="text-sm text-ink-muted">Revision: draft, 16 October 2026.</p>
+          <p className="text-sm text-ink-muted">Revision: 20 October 2026.</p>
         </div>
       </Section>
     </>

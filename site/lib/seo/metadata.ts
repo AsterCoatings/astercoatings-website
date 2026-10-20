@@ -34,7 +34,7 @@ export function buildMetadata(input: {
       type: 'website',
       locale: 'en_US',
     },
-    twitter: { card: 'summary', title: fullTitle, description: input.description },
+    twitter: { card: 'summary_large_image', title: fullTitle, description: input.description },
   };
 }
 

@@ -204,8 +204,8 @@ function MobileMenu({
             ))}
           </ul>
           <div className="mt-6 flex flex-col gap-3">
-            <Link href="/request-a-quote" className="btn btn-primary justify-center">
-              Request a quote
+            <Link href="/contact" className="btn btn-primary justify-center">
+              Contact us
             </Link>
             {phone ? (
               <a href={telHref(phone)} className="btn btn-on-dark justify-center">
