@@ -85,10 +85,46 @@ export class SmtpEmailAdapter implements EmailAdapter {
   }
 }
 
+/**
+ * Formspree (https://formspree.io): the notification is posted to a Formspree form, which emails the
+ * form's owner and keeps the submission in the Formspree dashboard. Needs FORMSPREE_FORM_ID (the id
+ * in https://formspree.io/f/<id>). Formspree only delivers to the form owner, so this adapter refuses
+ * any message not addressed to the configured internal recipients (customer confirmations are never
+ * sent through it).
+ */
+export class FormspreeEmailAdapter implements EmailAdapter {
+  readonly name = 'formspree';
+  async send(msg: EmailMessage) {
+    const id = process.env.FORMSPREE_FORM_ID;
+    if (!id) throw new Error('FORMSPREE_FORM_ID is not set');
+    const internal = [
+      process.env.SALES_NOTIFICATION_EMAIL,
+      process.env.TECHNICAL_NOTIFICATION_EMAIL,
+      process.env.ADMIN_ALERT_EMAIL,
+    ]
+      .filter(Boolean)
+      .map((e) => String(e).toLowerCase());
+    if (!msg.to.every((t) => internal.includes(t.toLowerCase())))
+      throw new Error('formspree delivers to the form owner only; cannot email ' + msg.to.join(','));
+    const res = await fetch(`https://formspree.io/f/${id}`, {
+      method: 'POST',
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        _subject: msg.subject,
+        ...(msg.replyTo ? { email: msg.replyTo, _replyto: msg.replyTo } : {}),
+        message: msg.text,
+      }),
+    });
+    if (!res.ok) throw new Error(`formspree ${res.status}: ${(await res.text()).slice(0, 200)}`);
+    return { id: `formspree-${Date.now()}` };
+  }
+}
+
 export function createEmailAdapter(): EmailAdapter {
   const provider = process.env.EMAIL_PROVIDER ?? 'console';
   if (provider === 'console') return new ConsoleEmailAdapter();
   if (provider === 'resend') return new ResendEmailAdapter();
+  if (provider === 'formspree') return new FormspreeEmailAdapter();
   if (provider === 'smtp') return new SmtpEmailAdapter();
   throw new Error(`Unknown EMAIL_PROVIDER '${provider}'`);
 }
