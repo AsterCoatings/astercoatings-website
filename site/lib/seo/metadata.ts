@@ -33,8 +33,23 @@ export function buildMetadata(input: {
       siteName: site.brand.name,
       type: 'website',
       locale: 'en_US',
+      // Page-level openGraph replaces the inherited one, so the brand share image (app/opengraph-image.png)
+      // must be repeated here or inner pages lose it.
+      images: [
+        {
+          url: '/opengraph-image.png',
+          width: 1200,
+          height: 630,
+          alt: `${site.brand.name} — ${site.brand.tagline ?? ''}`.trim(),
+        },
+      ],
     },
-    twitter: { card: 'summary_large_image', title: fullTitle, description: input.description },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description: input.description,
+      images: ['/twitter-image.png'],
+    },
   };
 }
 

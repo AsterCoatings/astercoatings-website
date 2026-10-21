@@ -238,7 +238,7 @@ export const messaging = {
     },
     history: {
       heading: 'Where we are',
-      text: 'Aster is based in Fairfield, California. Its coatings are manufactured at plants in California, Kentucky, Michigan and Texas and ship to customers across the United States.',
+      text: 'Aster coatings are manufactured at plants in California, Kentucky, Michigan and Texas and ship to customers across the United States.',
       approved: true,
     },
     trust: {
